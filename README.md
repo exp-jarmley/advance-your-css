@@ -27,3 +27,4 @@ gulp
 - Sun icon created by Delwar Hossain
 - Stamp icon created by iconsmind.com
 - Flip icon created by Anuar Zhumaev
+- Round sun icon created by Carla Dias
