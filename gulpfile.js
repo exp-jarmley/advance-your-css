@@ -9,39 +9,54 @@ var
     less = require('gulp-less'),
     path = require('path'),
     autoprefixer = require('autoprefixer'),
-    cmq = require('gulp-combine-media-queries')
+    modernizr = require('gulp-modernizr'),
+    cmq = require('gulp-combine-media-queries'),
+    connect = require('gulp-connect')
 ;
 
 // Define static assets
 var
     root = 'assets/',
     assets = {
-        styles: root + '/styles/'
+        styles: root + '/styles/',
+        scripts: root + '/scripts/'
     }
 ;
 
 // Styles
 gulp.task('styles', function(){
-    return sass('static/styles/sass/',{
-        style: 'compressed',
-        noCache: true
-    })
-    .pipe(autoprefixer({
-        browsers: ['last 2 versions']
+    return gulp.src(assets.styles + '/less/**/*.less')
+    .pipe(less({
+      paths: [ path.join(__dirname, 'less', 'includes') ],
+      compress: true
     }))
-    .pipe(cmq({
-        log: true
-    }))
-    .pipe(gulp.dest('static/styles/'));
+    .pipe(gulp.dest(assets.styles));
+});
+
+// Modernizr
+gulp.task('modernizr', function() {
+  gulp.src(assets.styles + '/**/*.css')
+    .pipe(modernizr())
+    .pipe(gulp.dest(assets.scripts))
+});
+
+// Server
+gulp.task('server', function(){
+    connect.server({
+        port: 3000,
+        root: './'
+    });
 });
 
 // Watch
 gulp.task('watch',function(){
-    gulp.watch('static/styles/sass/**/*.scss',['styles']);
+    gulp.watch(assets.styles + '/less/**/*.less',['styles','modernizr']);
 });
 
 // Default
 gulp.task('default', [
     'styles',
-    'watch'
+    'modernizr',
+    'watch',
+    'server'
 ]);

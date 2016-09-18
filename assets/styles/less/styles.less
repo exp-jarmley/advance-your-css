@@ -1,0 +1,219 @@
+/**
+ * Styles for postcard project
+ * @author: Jack Armley
+ * @version: 1.0
+ */
+
+/**
+ * Color swatch
+ */
+
+/**
+ * Pebble white: white
+ * Ocean blue: #62AAEF 
+ * Sunset orange: #EF601D
+ */
+
+/**
+ * 0. Fonts
+ */
+
+@font-face {
+  font-family: 'seaside-resort';
+  src: url('../fonts/seaside-resort/SEASRN__-webfont.eot');
+  src: url('../fonts/seaside-resort/SEASRN__-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/seaside-resort/SEASRN__-webfont.woff') format('woff');  
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'pacifico';
+  src: url('../fonts/pacifico/pacifico-webfont.woff') format('woff'); 
+}
+
+
+
+/**
+ * 1. Normalize styles
+ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * 2. Base styles
+ */
+
+html {
+  font-size: 62.5%;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  padding: 2rem;
+  font-size: 160%;
+  font-family: sans-serif;
+}
+p {
+  margin-bottom: 1em;
+}
+
+/**
+ * 3. Postcard outer styles
+ */
+
+.postcard {
+  max-width: 90rem;
+  margin: auto;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+  .postcard-section {
+    padding: 4rem;
+    color: white;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+    /**
+     * Inner elements
+     */
+    .postcard-section-title {
+      margin-bottom: 1em;
+      font-family: 'pacifico';
+      font-size: 2em;
+      text-align: center;
+    }
+
+/**
+ * 4. Header styles
+ */
+.postcard-section--header {
+  display: flex;
+  min-height: 40rem;
+  background-image: url('../images/tropical-island-bg.jpg');
+  background-size: cover;
+}
+  .postcard-section--header .postcard-section-headergroup {
+    margin: auto;
+    text-align: center;
+  }
+  .postcard-section--header .postcard-section-title {
+    margin: 0 0 2rem;
+    color: #FFE379;
+    font-size: 3em;
+    text-shadow: 
+      -.1rem -.1rem #EF601D,
+      .1rem .1rem #EF601D,
+      -.5rem .5rem #EF601D;
+  }
+  .postcard-section--header .button {
+    margin: auto;
+  }
+
+/**
+ * 5. Back styles
+ */
+.postcard-section--top3 {
+  background-image: linear-gradient(45deg, #EF601D, #EFAE34);
+}
+
+/**
+ * When 3d transforms are supported, make
+ * postcard flippable
+ */
+.transforms {
+  .postcard {
+    width: 90rem;
+    height: 50rem;
+    perspective: 100rem;
+    border-radius: 0;
+    overflow: visible;
+    &-flipper  {
+      position: relative;
+      transition: 1s;
+      transform-style: preserve-3d;
+    }
+    &-section {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50rem;
+      border-radius: 2rem;
+      backface-visibility: hidden;
+      &:nth-child(1) {
+        z-index: 2;
+        transform: rotateY(0deg);
+      }
+      &:nth-child(2) {
+        z-index: 1;
+        transform: rotateY(-180deg);
+      }
+    }
+    &.is--flipped {
+      .postcard-flipper {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+}
+
+/**
+ * 5. Components
+ */
+
+ /**
+  * Feature list
+  */
+  .featurelist {
+    display: flex;
+    list-style: none;
+    counter-reset: featurelist-counter;
+  }
+    .featurelist-item {
+      flex: 1 1 9rem;
+      margin: 0 1rem;
+      text-align: center;
+    }
+      .featurelist-item:before{
+        display: block;
+        content:counter(featurelist-counter);
+        counter-increment: featurelist-counter;
+        width: 8rem;
+        height: 8rem;
+        margin: 0 auto 2rem;
+        border-radius: 100%;
+        background: rgba(0,0,0,.3);
+        box-shadow: 
+          inset 0 .1rem 0 rgba(0,0,0,.5),
+          inset 0 -.1rem 0 rgba(255,255,255,.8);
+        font-size: 3em;
+        line-height: 7rem;
+        font-family: 'pacifico';
+      }
+
+/**
+ * Button
+ */
+.button {
+  display: inline-block;
+  background: #EF601D;
+  color: white;
+  text-decoration: none;
+  padding: 2rem;
+  border-radius: 1rem;
+  font-family: 'seaside-resort';
+}
+
+/**
+ * Hero text
+ */
+.herotext {
+  font-size: 1.7em;
+  font-family: 'pacifico';
+  text-align: center;
+}
