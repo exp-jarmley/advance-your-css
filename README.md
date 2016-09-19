@@ -12,7 +12,8 @@ Advance Your CSS Code Academy Course Project
 ```
 cd advance-your-css
 ``` 
-3. Run npm install
+3. Run `sudo npm install -g gulp` to install gulp globally
+3. Run `npm install`
 ```
 npm install
 ```
