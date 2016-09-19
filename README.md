@@ -21,3 +21,10 @@ npm install
 gulp
 ```
 5. Goto `http://localhost:3000` in your browser to see the project
+
+## Noun Project icon credits
+- Thongs icon created by Miroslav Koša
+- Sun icon created by Delwar Hossain
+- Stamp icon created by iconsmind.com
+- Flip icon created by Anuar Zhumaev
+- Round sun icon created by Carla Dias
