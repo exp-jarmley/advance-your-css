@@ -12,16 +12,19 @@ Advance Your CSS Code Academy Course Project
 ```
 cd advance-your-css
 ``` 
-3. Run `sudo npm install -g gulp` to install gulp globally
-3. Run `npm install`
+3. Install gulp globally
+```
+sudo npm install -g gulp
+```
+4. Run npm install
 ```
 npm install
 ```
-4. Run the default gulp task to watch for LESS changes and start your local server
+5. Run the default gulp task to watch for LESS changes and start your local server
 ```
 gulp
 ```
-5. Goto `http://localhost:3000` in your browser to see the project
+6. Goto `http://localhost:3000` in your browser to see the project
 
 ## Noun Project icon credits
 - Thongs icon created by Miroslav Koša
