@@ -4,21 +4,26 @@
     <title>Virtual postcard</title>
     <link rel="stylesheet" href="./assets/styles/styles.css" />
   </head>
-  <body class="transformsNULL">
+  <body>
     <article class="postcard">
       <div class="postcard-flipper">
         <header class="postcard-section postcard-section--header" id="postcard-front">
           <div class="postcard-section-headergroup">        
             <h1 class="postcard-section-title">Greetings from A tropical island!</h1>
-            <a class="button postcard-readbutton" href="#postcard-back">Read about my adventure</a>
+            <img 
+              src="./assets/images/avatar.jpg" 
+              srcset="/assets/images/avatar.jpg 1x, 
+                      /assets/images/avatar-2x.jpg 2x">
+            <a class="button postcard-readbutton" href="#postcard-back">Flip to read!</a>
           </div>
         </header>
-        <div class="postcard-section postcard-section--top3" id="postcard-back">
-        <p class="herotext">Tropical island time was the best! Aside from cocktails and sunshine, my top 3 highlights have to be:</p>
-          <ol class="featurelist">
-            <li class="featurelist-item">Rubbin' on lotion</li>
-            <li class="featurelist-item">Sittin' by the ocean</li>
-            <li class="featurelist-item">Hangin' with the hula dancers</li>
+        <div class="postcard-section postcard-section--back" id="postcard-back">
+          <p class="postcard-message">I had a great time on holiday! Had lovely food and got plenty of sun! Not looking forward to coming back for the winter :)</p>
+          <h2 class="postcard-subheader">Highlights</h2>
+          <ol class="herolist">
+            <li class="herolist-item">Rubbin' on lotion</li>
+            <li class="herolist-item">Sittin' by the ocean</li>
+            <li class="herolist-item">Hangin' with the hula dancers</li>
           </ol>
         </div>
       </div>
