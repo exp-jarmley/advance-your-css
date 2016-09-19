@@ -36,7 +36,11 @@ gulp.task('styles', function(){
 // Modernizr
 gulp.task('modernizr', function() {
   gulp.src(assets.styles + '/**/*.css')
-    .pipe(modernizr())
+    .pipe(modernizr({
+        'options' : [
+            'setClasses'
+        ]
+    }))
     .pipe(gulp.dest(assets.scripts))
 });
 

@@ -3,6 +3,7 @@
   <head>
     <title>Virtual postcard</title>
     <link rel="stylesheet" href="./assets/styles/styles.css" />
+    <script src="./assets/scripts/modernizr.js"></script>
   </head>
   <body>
     <article class="postcard">
@@ -13,7 +14,8 @@
             <img 
               src="./assets/images/avatar.jpg" 
               srcset="/assets/images/avatar.jpg 1x, 
-                      /assets/images/avatar-2x.jpg 2x">
+                      /assets/images/avatar-2x.jpg 2x"
+              alt="Picture of Jack Armley holding a kitten wearing a black beanie " />
             <a class="button postcard-readbutton" href="#postcard-back">Flip to read!</a>
           </div>
         </header>
@@ -29,6 +31,5 @@
       </div>
     </article>
     <script src="./assets/scripts/app.js"></script>
-    <script src="./assets/scripts/modernizr.js"></script>
   </body>
 </html>
