@@ -35,7 +35,7 @@ gulp.task('styles', function(){
 
 // Modernizr
 gulp.task('modernizr', function() {
-  gulp.src(assets.styles + '/**/*.css')
+  gulp.src([assets.styles + '/**/*.css', assets.scripts + '/app.js'])
     .pipe(modernizr({
         'options' : [
             'setClasses'
