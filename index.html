@@ -1,35 +1,82 @@
 <!doctype html>
 <html lang="en">
+    
+  <!-- Page head
+       The user doesn't see these elements (aside from the title)
+       1. Title
+       2. Link to stylesheet
+       3. Modernizr js file to add feature detector
+  -->
   <head>
     <title>Virtual postcard</title>
     <link rel="stylesheet" href="./assets/styles/styles.css" />
     <script src="./assets/scripts/modernizr.js"></script>
   </head>
+
+  <!-- Page body
+       Stuff the user sees goes here
+  -->
   <body>
+
+    <!-- Virtual postcard -->
     <article class="postcard">
-      <div class="postcard-flipper">
-        <header class="postcard-section postcard-section--header" id="postcard-front">
-          <div class="postcard-section-headergroup">        
+
+        <!-- Postcard header
+             When flipping, this will be the front
+        -->
+        <header class="postcard-section postcard-section--header">
+
+          <!-- Header group -->
+          <div class="postcard-section-headergroup"> 
+
+            <!-- Title -->       
             <h1 class="postcard-section-title">Greetings from A tropical island!</h1>
+
+            <!-- Avatar image 
+                 Uses srcset to provide images for both regular
+                 and high-density displays
+            -->
             <img 
               src="./assets/images/avatar.jpg" 
               srcset="/assets/images/avatar.jpg 1x, 
                       /assets/images/avatar-2x.jpg 2x"
               alt="Picture of Jack Armley holding a kitten wearing a black beanie " />
+
           </div>
+
         </header>
-        <div class="postcard-section postcard-section--back" id="postcard-back">
-          <p class="postcard-message">I had a great time on holiday! Had lovely food and got plenty of sun! Not looking forward to coming back for the winter :)</p>
+
+        <!-- Postcard message
+             When flipping, this will be the back
+        -->
+        <div class="postcard-section postcard-section--message">
+
+          <!-- Message -->
+          <p class="postcard-message">
+            I had a great time on holiday! Had lovely food and got plenty of sun! Not looking forward to coming back for the winter :)
+          </p>
+
+          <!-- Highlights
+               Vacation highlights with header and ordered list
+               of 3 fave parts of the vaycay
+          -->
           <h2 class="postcard-subheader">Highlights</h2>
           <ol class="herolist">
             <li class="herolist-item">Rubbin' on lotion</li>
             <li class="herolist-item">Sittin' by the ocean</li>
             <li class="herolist-item">Hangin' with the hula dancers</li>
           </ol>
+
         </div>
-      </div>
+
     </article>
+
+    <!-- Scripts
+         Added after all the other markup so they don't block
+         page rendering
+    -->
     <script src="./assets/scripts/cardflip.js"></script>
     <script src="./assets/scripts/app.js"></script>
+
   </body>
 </html>
